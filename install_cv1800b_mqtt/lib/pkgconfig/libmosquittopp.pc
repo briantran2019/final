@@ -1,0 +1,10 @@
+prefix=/app/build/install_cv1800b_mqtt
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: mosquittopp
+Description: mosquitto MQTT library (C++ bindings)
+Version: 2.0.18
+Cflags: -I${includedir}
+Libs: -L${libdir} -lmosquittopp
