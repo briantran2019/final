@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "mosquitto.h": "c",
+        "cjson.h": "c"
+    }
+}
