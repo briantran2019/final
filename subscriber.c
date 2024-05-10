@@ -108,19 +108,14 @@ void system_init(){
     wiringXGC();
     }
 
-    /*Initializing the LED*/
-    if(initialize_led() == -1){
-        printf("LED initialization failed.\n");
-    }
-
     /*Initializing the sensor*/
-    bmp280_i2c_init();
+    bmp280_init();
     
     /*Settting the i2c channel for the OLED display*/
     uint8_t i2c_node_address = 0;
 
     /*Initializing the OLED Display*/
-    ssd1306_system_init(i2c_node_address);
+    ssd1306_init(i2c_node_address);
 
     /*Testing the system*/
     if(START_UP_MESSAGE_ENABLE){
