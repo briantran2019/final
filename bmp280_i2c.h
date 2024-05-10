@@ -89,5 +89,4 @@ struct bmp280_i2c
     double pressure_psi;
 }
 
-void wiringx_init();
 struct bmp280_i2c read_temp_pressure();
