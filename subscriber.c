@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
     // Initialize the Mosquitto library
     mosquitto_lib_init();
 
-    system_init()
+    system_init();
 
     // Create a new Mosquitto runtime instance with a random client ID
     mosq = mosquitto_new(NULL, true, NULL);
