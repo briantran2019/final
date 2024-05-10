@@ -102,8 +102,6 @@ void message_callback(struct mosquitto *mosq, void *userdata, const struct mosqu
     }
 }
 
-bmp280_i2c_init();
-
 void system_init(){
     /*Initializing WiringX*/
     if(wiringXSetup("duo", NULL) == -1) {
