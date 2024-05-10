@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <mosquitto.h>
-#include <cjson/cJSON.h>
+#include <install_cv1800b_mqtt\include\mosquitto.h>
+#include <install_cv1800b_cjson\include\cjson\cJSON.h>
 #include <string.h>
 #include <wiringx.h>
 #include "ssd1306.h"
