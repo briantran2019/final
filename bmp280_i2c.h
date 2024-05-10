@@ -82,12 +82,12 @@ int32_t bmp280_convert_pressure(int32_t pressure, int32_t temp, struct bmp280_ca
 
 struct bmp280_i2c
 {
-    double temperature_C
+    double temperature_C;
     double temperature_F;
     double pressure_kPa;
     double pressure_atm;
     double pressure_psi;
-};
+}
 
 void wiringx_init();
 struct bmp280_i2c read_temp_pressure();
