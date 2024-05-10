@@ -87,6 +87,6 @@ struct bmp280_i2c
     double pressure_kPa;
     double pressure_atm;
     double pressure_psi;
-}
+};
 
 struct bmp280_i2c read_temp_pressure();
