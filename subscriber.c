@@ -119,30 +119,16 @@ void system_init(){
 
     /*Testing the system*/
     if(true){
-        printf("Testing BMP280 Sensor and OLED Display printing.\n");
         struct bmp280_i2c result = read_temp_pressure();
         char buffer[50];
-
-        //Printing current temperature and pressure to the terminal
-        printf("Current Temperature: %.2f F\n", result.temperature_F);
-        printf("Current Pressure: %.3f psi\n", result.pressure_psi);
-
-        //Format the data into a string and save it to a buffer
-        sprintf(buffer, "Temperature: %.2f F \\nPressure: %.3f psi\\n", result.temperature_F, result.pressure_psi);
+        printf("Current Temperature: %.2f F\nCurrent Pressure: %.2f psi\n", result.temperature_F, result.pressure_psi);
+        sprintf(buffer, "Temperature: %.2f F \\nPressure: %.2f psi\\n", result.temperature_F, result.pressure_psi);
         
-        //Clear the screen before printing
         ssd1306_oled_clear_screen();
-
-        /*Turning display on*/
         ssd1306_oled_onoff(1);
-
-        //Set starting coordinates to (0,0)
         ssd1306_oled_set_XY(0, 0);
-
-        //Print the string to the display
         ssd1306_oled_write_string(0, buffer);
 
-        //Sleep for 3 seconds so you can see the screen
         sleep(3);
     }
 }
