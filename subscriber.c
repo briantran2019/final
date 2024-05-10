@@ -36,7 +36,7 @@ void message_callback(struct mosquitto *mosq, void *userdata, const struct mosqu
                 sprintf(buf, "%s", string_msg->valuestring);
                 ssd1306_oled_clear_screen();
                 ssd1306_oled_set_XY(0, 0);
-                ssd1306_oled_write_string(10, buf);
+                ssd1306_oled_write_string(0, buf);
             }
 
             const cJSON *int_msg = cJSON_GetObjectItemCaseSensitive(root, "int_msg");
@@ -47,7 +47,7 @@ void message_callback(struct mosquitto *mosq, void *userdata, const struct mosqu
                 sprintf(buf, "%d", int_msg->valueint);
                 ssd1306_oled_clear_screen();
                 ssd1306_oled_set_XY(0, 0);
-                ssd1306_oled_write_string(10, buf);
+                ssd1306_oled_write_string(0, buf);
             }
 
             const cJSON *task = cJSON_GetObjectItemCaseSensitive(root, "task");
@@ -60,8 +60,8 @@ void message_callback(struct mosquitto *mosq, void *userdata, const struct mosqu
                     printf("Temperature is %.2f F\n", result.temperature_F);
                     sprintf(buf, "Temperature is %.2f F\n", result.temperature_F);
                     ssd1306_oled_clear_screen();
-                    ssd1306_oled_set_XY(10, 10);
-                    ssd1306_oled_write_string(10, buf);
+                    ssd1306_oled_set_XY(0, 0);
+                    ssd1306_oled_write_string(0, buf);
                 }
                 else if(strcmp(task->valuestring, "get_pressure") == 0) 
                 {
@@ -71,8 +71,8 @@ void message_callback(struct mosquitto *mosq, void *userdata, const struct mosqu
                     printf("Pressure is %.3f psi\n", result.pressure_psi);
                     sprintf(buf, "Pressure is %.3f psi\n", result.pressure_psi);
                     ssd1306_oled_clear_screen();
-                    ssd1306_oled_set_XY(10, 10);
-                    ssd1306_oled_write_string(10, buf);
+                    ssd1306_oled_set_XY(0, 0);
+                    ssd1306_oled_write_string(0, buf);
                 }
                 else if(strcmp(task->valuestring, "get_temperature_pressure") == 0)
                 {
@@ -82,8 +82,8 @@ void message_callback(struct mosquitto *mosq, void *userdata, const struct mosqu
                     printf("Temperature: %.2f F\nPressure: %.3f psi\n", result.temperature_F, result.pressure_psi);
                     sprintf(buf, "Temperature: %.2f F\nPressure:: %.3f psi", result.temperature_F, result.pressure_psi);
                     ssd1306_oled_clear_screen();
-                    ssd1306_oled_set_XY(10, 10);
-                    ssd1306_oled_write_string(10, buf);
+                    ssd1306_oled_set_XY(0, 0);
+                    ssd1306_oled_write_string(0, buf);
             }      
 
             cJSON_Delete(root);
@@ -108,6 +108,8 @@ int main(int argc, char *argv[])
 
     // Initialize the Mosquitto library
     mosquitto_lib_init();
+
+    system_init()
 
     // Create a new Mosquitto runtime instance with a random client ID
     mosq = mosquitto_new(NULL, true, NULL);
