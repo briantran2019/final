@@ -78,7 +78,7 @@ void message_callback(struct mosquitto *mosq, void *userdata, const struct mosqu
                 {
                     printf("Reading temperature and pressure\n");
                     struct bmp280_i2c result = read_temp_pressure();
-                    char bufffer[100] = {0};
+                    char buffer[100] = {0};
                     printf("Temperature: %.2f \nPressure: %.3f psi\n", result.temperature_F, result.pressure_psi);
                     sprintf(buf, "Temp: %.2fF | Pres: %.2f psi", result.temperature_F, result.pressure_psi);
                     ssd1306_oled_clear_screen();
