@@ -49,4 +49,4 @@ add_executable(publisher publisher.c)
 
 # Link libraries
 target_link_libraries(subscriber ${CJSON_LIB} ${MQTT_LIB} ${OPEN_SSL_LIB} ${CRYPTO_LIB} ${SSD1306_LIB})
-target_link_libraries(publisher ${CJSON_LIB} ${MQTT_LIB} ${OPEN_SSL_LIB} ${CRYPTO_LIB} ${BMp280_LIB})
+target_link_libraries(publisher ${CJSON_LIB} ${MQTT_LIB} ${OPEN_SSL_LIB} ${CRYPTO_LIB} ${BMP280_LIB})
