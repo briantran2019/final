@@ -80,7 +80,7 @@ void message_callback(struct mosquitto *mosq, void *userdata, const struct mosqu
                     struct bmp280_i2c result = read_temp_pressure();
                     char buf[50];
                     printf("Temperature: %.2f F\nPressure: %.3f psi\n", result.temperature_F, result.pressure_psi);
-                    sprintf(buf, "Temperature: %.2f F\nPressure:: %.3f psi", result.temperature, result.pressure_psi);
+                    sprintf(buf, "Temperature: %.2f F\nPressure:: %.3f psi", result.temperature_F, result.pressure_psi);
                     ssd1306_oled_clear_screen();
                     ssd1306_oled_set_XY(10, 10);
                     ssd1306_oled_write_string(10, buf);
