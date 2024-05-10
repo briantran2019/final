@@ -75,10 +75,12 @@ struct bmp280_calib_param
 
 void bmp280_read_raw(int fd, int32_t *temp, int32_t *pressure);
 void bmp280_init(int fd);
+void bmp280_i2c_init();
 void bmp280_get_calib_params(int fd, struct bmp280_calib_param *params);
 int32_t bmp280_convert(int32_t temp, struct bmp280_calib_param *params);
 int32_t bmp280_convert_temp(int32_t temp, struct bmp280_calib_param *params);
 int32_t bmp280_convert_pressure(int32_t pressure, int32_t temp, struct bmp280_calib_param *params);
+
 
 struct bmp280_i2c
 {
