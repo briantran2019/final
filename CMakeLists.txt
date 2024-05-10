@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 project(final_project)
 
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED True)
+
 # Find cJSON library
 find_library(CJSON_LIB
   NAMES cjson
