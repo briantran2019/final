@@ -118,7 +118,7 @@ void system_init(){
     ssd1306_init(i2c_node_address);
 
     /*Testing the system*/
-    if(START_UP_MESSAGE_ENABLE){
+    if(true){
         printf("Testing BMP280 Sensor and OLED Display printing.\n");
         struct bmp280_i2c result = read_temp_pressure();
         char buffer[50];
