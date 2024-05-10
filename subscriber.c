@@ -109,7 +109,7 @@ void system_init(){
     }
 
     /*Initializing the sensor*/
-    bmp280_init();
+    bmp280_i2c_init();
     
     /*Settting the i2c channel for the OLED display*/
     uint8_t i2c_node_address = 0;
