@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "mosquitto.h": "c",
-        "cjson.h": "c"
+        "cjson.h": "c",
+        "linux_i2c.h": "c"
     }
 }
