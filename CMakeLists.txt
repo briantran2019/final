@@ -34,6 +34,11 @@ if(NOT CJSON_LIB OR NOT MQTT_LIB OR NOT OPEN_SSL_LIB OR NOT CRYPTO_LIB)
   message(FATAL_ERROR "One or more libraries (cJSON, Mosquitto, SSL) not found")
 endif()
 
+set(SSD1306_LIB ssd1306)
+set(BMP280_LIB bmp280)
+
+add_library(${SSD1306_LIB} STATIC ssd1306.c linux_i2c.c)
+add_library(${BMP280_LIB} STATIC bmp280_i2c.c)
 
 # Add executables
 add_executable(subscriber subscriber.c)
