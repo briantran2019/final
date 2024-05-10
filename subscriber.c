@@ -102,6 +102,56 @@ void message_callback(struct mosquitto *mosq, void *userdata, const struct mosqu
     }
 }
 
+void system_init(){
+    /*Initializing WiringX*/
+    if(wiringXSetup("duo", NULL) == -1) {
+    wiringXGC();
+    }
+
+    /*Initializing the LED*/
+    if(initialize_led() == -1){
+        printf("LED initialization failed.\n");
+    }
+
+    /*Initializing the sensor*/
+    bmp280_i2c_init();
+    
+    /*Settting the i2c channel for the OLED display*/
+    uint8_t i2c_node_address = 0;
+
+    /*Initializing the OLED Display*/
+    ssd1306_system_init(i2c_node_address);
+
+    /*Testing the system*/
+    if(START_UP_MESSAGE_ENABLE){
+        printf("Testing BMP280 Sensor and OLED Display printing.\n");
+        struct bmp280_i2c result = read_temp_pressure();
+        char buffer[50];
+
+        //Printing current temperature and pressure to the terminal
+        printf("Current Temperature: %.2f F\n", result.temperature_F);
+        printf("Current Pressure: %.3f psi\n", result.pressure_psi);
+
+        //Format the data into a string and save it to a buffer
+        sprintf(buffer, "Temperature: %.2f F \\nPressure: %.3f psi\\n", result.temperature_F, result.pressure_psi);
+        
+        //Clear the screen before printing
+        ssd1306_oled_clear_screen();
+
+        /*Turning display on*/
+        ssd1306_oled_onoff(1);
+
+        //Set starting coordinates to (0,0)
+        ssd1306_oled_set_XY(0, 0);
+
+        //Print the string to the display
+        ssd1306_oled_write_string(0, buffer);
+
+        //Sleep for 3 seconds so you can see the screen
+        sleep(3);
+    }
+}
+
 int main(int argc, char *argv[])
 {
     struct mosquitto *mosq;
