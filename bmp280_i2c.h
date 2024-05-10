@@ -21,7 +21,7 @@
 #define I2C_DEV "/dev/i2c-1"
 
 // device has default bus address of 0x76
-#define I2C_ADDR 0x76
+#define BMP280_I2C_ADDR 0x76
 
 // hardware registers
 #define REG_CONFIG 0xF5
