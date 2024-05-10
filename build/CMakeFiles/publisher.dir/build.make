@@ -96,6 +96,8 @@ publisher: ../install_cv1800b_cjson/lib/libcjson.so
 publisher: ../install_cv1800b_mqtt/lib/libmosquitto.so
 publisher: ../install_cv1800b_openssl/lib/libssl.so
 publisher: ../install_cv1800b_openssl/lib/libcrypto.so
+publisher: libssd1306.a
+publisher: libbmp280.a
 publisher: CMakeFiles/publisher.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/app/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable publisher"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/publisher.dir/link.txt --verbose=$(VERBOSE)

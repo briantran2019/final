@@ -63,6 +63,8 @@ CMAKE_BINARY_DIR = /app/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/ssd1306.dir/all
+all: CMakeFiles/bmp280.dir/all
 all: CMakeFiles/subscriber.dir/all
 all: CMakeFiles/publisher.dir/all
 .PHONY : all
@@ -72,23 +74,78 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/ssd1306.dir/clean
+clean: CMakeFiles/bmp280.dir/clean
 clean: CMakeFiles/subscriber.dir/clean
 clean: CMakeFiles/publisher.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/ssd1306.dir
+
+# All Build rule for target.
+CMakeFiles/ssd1306.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ssd1306.dir/build.make CMakeFiles/ssd1306.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ssd1306.dir/build.make CMakeFiles/ssd1306.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/build/CMakeFiles --progress-num=5,6,7 "Built target ssd1306"
+.PHONY : CMakeFiles/ssd1306.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ssd1306.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ssd1306.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/build/CMakeFiles 0
+.PHONY : CMakeFiles/ssd1306.dir/rule
+
+# Convenience name for target.
+ssd1306: CMakeFiles/ssd1306.dir/rule
+.PHONY : ssd1306
+
+# clean rule for target.
+CMakeFiles/ssd1306.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ssd1306.dir/build.make CMakeFiles/ssd1306.dir/clean
+.PHONY : CMakeFiles/ssd1306.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/bmp280.dir
+
+# All Build rule for target.
+CMakeFiles/bmp280.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bmp280.dir/build.make CMakeFiles/bmp280.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bmp280.dir/build.make CMakeFiles/bmp280.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/build/CMakeFiles --progress-num=1,2 "Built target bmp280"
+.PHONY : CMakeFiles/bmp280.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/bmp280.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/bmp280.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/build/CMakeFiles 0
+.PHONY : CMakeFiles/bmp280.dir/rule
+
+# Convenience name for target.
+bmp280: CMakeFiles/bmp280.dir/rule
+.PHONY : bmp280
+
+# clean rule for target.
+CMakeFiles/bmp280.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bmp280.dir/build.make CMakeFiles/bmp280.dir/clean
+.PHONY : CMakeFiles/bmp280.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/subscriber.dir
 
 # All Build rule for target.
-CMakeFiles/subscriber.dir/all:
+CMakeFiles/subscriber.dir/all: CMakeFiles/bmp280.dir/all
+CMakeFiles/subscriber.dir/all: CMakeFiles/ssd1306.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/subscriber.dir/build.make CMakeFiles/subscriber.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/subscriber.dir/build.make CMakeFiles/subscriber.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/build/CMakeFiles --progress-num=3,4 "Built target subscriber"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/build/CMakeFiles --progress-num=8,9 "Built target subscriber"
 .PHONY : CMakeFiles/subscriber.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/subscriber.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /app/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/subscriber.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /app/build/CMakeFiles 0
 .PHONY : CMakeFiles/subscriber.dir/rule
@@ -106,15 +163,16 @@ CMakeFiles/subscriber.dir/clean:
 # Target rules for target CMakeFiles/publisher.dir
 
 # All Build rule for target.
-CMakeFiles/publisher.dir/all:
+CMakeFiles/publisher.dir/all: CMakeFiles/bmp280.dir/all
+CMakeFiles/publisher.dir/all: CMakeFiles/ssd1306.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/publisher.dir/build.make CMakeFiles/publisher.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/publisher.dir/build.make CMakeFiles/publisher.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/build/CMakeFiles --progress-num=1,2 "Built target publisher"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/app/build/CMakeFiles --progress-num=3,4 "Built target publisher"
 .PHONY : CMakeFiles/publisher.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/publisher.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /app/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /app/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/publisher.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /app/build/CMakeFiles 0
 .PHONY : CMakeFiles/publisher.dir/rule

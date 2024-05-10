@@ -8,13 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/app/subscriber.c" "CMakeFiles/subscriber.dir/subscriber.c.o" "gcc" "CMakeFiles/subscriber.dir/subscriber.c.o.d"
+  "/app/linux_i2c.c" "CMakeFiles/ssd1306.dir/linux_i2c.c.o" "gcc" "CMakeFiles/ssd1306.dir/linux_i2c.c.o.d"
+  "/app/ssd1306.c" "CMakeFiles/ssd1306.dir/ssd1306.c.o" "gcc" "CMakeFiles/ssd1306.dir/ssd1306.c.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/app/build/CMakeFiles/ssd1306.dir/DependInfo.cmake"
-  "/app/build/CMakeFiles/bmp280.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

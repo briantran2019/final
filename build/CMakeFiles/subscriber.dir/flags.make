@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/app/install_cv1800b_mqtt/include -I/app/install_cv1800b_cjson/include
 
-C_FLAGS = 
+C_FLAGS = -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -std=gnu11
 

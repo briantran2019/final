@@ -117,6 +117,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named ssd1306
+
+# Build rule for target.
+ssd1306: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ssd1306
+.PHONY : ssd1306
+
+# fast build rule for target.
+ssd1306/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ssd1306.dir/build.make CMakeFiles/ssd1306.dir/build
+.PHONY : ssd1306/fast
+
+#=============================================================================
+# Target rules for targets named bmp280
+
+# Build rule for target.
+bmp280: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bmp280
+.PHONY : bmp280
+
+# fast build rule for target.
+bmp280/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bmp280.dir/build.make CMakeFiles/bmp280.dir/build
+.PHONY : bmp280/fast
+
+#=============================================================================
 # Target rules for targets named subscriber
 
 # Build rule for target.
@@ -142,6 +168,54 @@ publisher/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/publisher.dir/build.make CMakeFiles/publisher.dir/build
 .PHONY : publisher/fast
 
+bmp280_i2c.o: bmp280_i2c.c.o
+.PHONY : bmp280_i2c.o
+
+# target to build an object file
+bmp280_i2c.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bmp280.dir/build.make CMakeFiles/bmp280.dir/bmp280_i2c.c.o
+.PHONY : bmp280_i2c.c.o
+
+bmp280_i2c.i: bmp280_i2c.c.i
+.PHONY : bmp280_i2c.i
+
+# target to preprocess a source file
+bmp280_i2c.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bmp280.dir/build.make CMakeFiles/bmp280.dir/bmp280_i2c.c.i
+.PHONY : bmp280_i2c.c.i
+
+bmp280_i2c.s: bmp280_i2c.c.s
+.PHONY : bmp280_i2c.s
+
+# target to generate assembly for a file
+bmp280_i2c.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bmp280.dir/build.make CMakeFiles/bmp280.dir/bmp280_i2c.c.s
+.PHONY : bmp280_i2c.c.s
+
+linux_i2c.o: linux_i2c.c.o
+.PHONY : linux_i2c.o
+
+# target to build an object file
+linux_i2c.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ssd1306.dir/build.make CMakeFiles/ssd1306.dir/linux_i2c.c.o
+.PHONY : linux_i2c.c.o
+
+linux_i2c.i: linux_i2c.c.i
+.PHONY : linux_i2c.i
+
+# target to preprocess a source file
+linux_i2c.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ssd1306.dir/build.make CMakeFiles/ssd1306.dir/linux_i2c.c.i
+.PHONY : linux_i2c.c.i
+
+linux_i2c.s: linux_i2c.c.s
+.PHONY : linux_i2c.s
+
+# target to generate assembly for a file
+linux_i2c.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ssd1306.dir/build.make CMakeFiles/ssd1306.dir/linux_i2c.c.s
+.PHONY : linux_i2c.c.s
+
 publisher.o: publisher.c.o
 .PHONY : publisher.o
 
@@ -165,6 +239,30 @@ publisher.s: publisher.c.s
 publisher.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/publisher.dir/build.make CMakeFiles/publisher.dir/publisher.c.s
 .PHONY : publisher.c.s
+
+ssd1306.o: ssd1306.c.o
+.PHONY : ssd1306.o
+
+# target to build an object file
+ssd1306.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ssd1306.dir/build.make CMakeFiles/ssd1306.dir/ssd1306.c.o
+.PHONY : ssd1306.c.o
+
+ssd1306.i: ssd1306.c.i
+.PHONY : ssd1306.i
+
+# target to preprocess a source file
+ssd1306.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ssd1306.dir/build.make CMakeFiles/ssd1306.dir/ssd1306.c.i
+.PHONY : ssd1306.c.i
+
+ssd1306.s: ssd1306.c.s
+.PHONY : ssd1306.s
+
+# target to generate assembly for a file
+ssd1306.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ssd1306.dir/build.make CMakeFiles/ssd1306.dir/ssd1306.c.s
+.PHONY : ssd1306.c.s
 
 subscriber.o: subscriber.c.o
 .PHONY : subscriber.o
@@ -198,11 +296,22 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... bmp280"
 	@echo "... publisher"
+	@echo "... ssd1306"
 	@echo "... subscriber"
+	@echo "... bmp280_i2c.o"
+	@echo "... bmp280_i2c.i"
+	@echo "... bmp280_i2c.s"
+	@echo "... linux_i2c.o"
+	@echo "... linux_i2c.i"
+	@echo "... linux_i2c.s"
 	@echo "... publisher.o"
 	@echo "... publisher.i"
 	@echo "... publisher.s"
+	@echo "... ssd1306.o"
+	@echo "... ssd1306.i"
+	@echo "... ssd1306.s"
 	@echo "... subscriber.o"
 	@echo "... subscriber.i"
 	@echo "... subscriber.s"

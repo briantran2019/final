@@ -1,0 +1,2 @@
+//duo-sdk/riscv64-linux-musl-x86_64/bin/riscv64-unknown-linux-musl-ar qc libssd1306.a CMakeFiles/ssd1306.dir/ssd1306.c.o CMakeFiles/ssd1306.dir/linux_i2c.c.o
+//duo-sdk/riscv64-linux-musl-x86_64/bin/riscv64-unknown-linux-musl-ranlib libssd1306.a

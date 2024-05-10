@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <mosquitto.h>
-#include <cjson/cJSON.h>
+#include <cJSON.h>
 #include <string.h>
 
 void publish_message(struct mosquitto *mosq, const char *topic, const char *message)
